@@ -21,7 +21,8 @@ export class ArticleController{
     @Get(':id')
     async show(@Param('id') id: string, @Res() res: Response){
         const article = await this._articleService.showArticle(id);
-        if(article != null) return article;
+        console.log(article);
+        if(article != null) return res.status(HttpStatus.OK).json(article);
         else return res.status(HttpStatus.NOT_FOUND).json({message:'Not Found'});
     }
 

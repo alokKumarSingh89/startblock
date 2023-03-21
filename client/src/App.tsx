@@ -1,24 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Header } from './components/Header/Header';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import { ArticleList } from './components/Articles';
+import { Article } from './components/Articles/Article';
+import { ArticleForm } from './components/Articles/Article.form';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <ArticleList />,
+  },
+  {
+    path: "/:id",
+    element: <Article />,
+  },
+  {
+    path: "/new",
+    element: <ArticleForm />,
+  },
+  {
+    path: "/:id/edit",
+    element: <ArticleForm />,
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <div className='container mx-auto mt-5'>
+        <RouterProvider router={router} />
+      </div>
+
     </div>
   );
 }

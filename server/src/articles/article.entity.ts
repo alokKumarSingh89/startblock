@@ -12,7 +12,9 @@ export class Article extends Model<Article> {
     @Column
     title: string
 
-    @Column
+    @Column({
+        type: DataType.TEXT
+    })
     body: string
 
     @Column({defaultValue: DataType.NOW})
