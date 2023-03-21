@@ -21,6 +21,7 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_DB: ${POSTGRES_DB}
       DB_PORT: ${DB_PORT}
+      whiltelist: ${whiltelist}
     volumes:
       - /app/node_modules
       - ./server:/server

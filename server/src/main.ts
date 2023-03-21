@@ -4,7 +4,6 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const whitelist = process.env.whiltelist.split(',');
-  console.log(whitelist, "whitelist");
   app.setGlobalPrefix('api/v1');
   app.enableCors({
     origin: function (origin, callback) {

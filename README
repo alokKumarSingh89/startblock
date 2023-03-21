@@ -1,0 +1,23 @@
+# Project Setup
+
+### Softwere required
+
+```
+     Please make sure you have docker and node installed on your system
+```
+
+### Create env file in root folder and provide the following variable name
+```
+    1. POSTGRES_USER
+    2. POSTGRES_DB
+    3. POSTGRES_PASSWORD
+    4. DB_PORT
+    5. whiltelist(client host with common seperated)
+```
+
+### Run following coomand to up the service
+```
+    1. npm install in client and server folder
+    2. docker compose up
+```
+
